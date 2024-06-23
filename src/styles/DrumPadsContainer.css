@@ -1,0 +1,27 @@
+#drum-pads-container {
+    width: 50%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin: 2rem;
+    gap: 1rem;
+}
+
+.drum-pad {
+    width: 10rem;
+    height: 10rem;
+    border-radius: 1rem;
+    box-shadow: 2px 2px 5px black;
+    border: none;
+    background-color: lightgrey;
+    font-weight: 600;
+    font-size: 2rem;
+}
+
+.drum-pad:hover {
+    cursor: pointer;
+}
+
+.drum-pad:active {
+    background-color: aqua;
+    box-shadow: 2px 2px 5px aqua;
+}
