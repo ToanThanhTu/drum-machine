@@ -1,18 +1,22 @@
 #drum-controls {
-    width: 50%;
+    width: 40rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
 }
 
 #display {
+    height: 6rem;
     width: 60%;
     text-align: center;
-    line-height: 3;
-    font-weight: 700;
+    line-height: 6rem;
+    font-weight: 400;
     font-size: 2rem;
     margin: 2rem;
+    background-color: var(--pad);
+    color: white;
 }
 
 #volume-wrap {

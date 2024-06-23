@@ -1,5 +1,5 @@
 #drum-pads-container {
-    width: 50%;
+    /* width: 50%; */
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     margin: 2rem;
@@ -10,9 +10,10 @@
     width: 10rem;
     height: 10rem;
     border-radius: 1rem;
-    box-shadow: 2px 2px 5px black;
+    box-shadow: 2px 2px 5px var(--pad);
     border: none;
-    background-color: lightgrey;
+    background-color: var(--pad);
+    color: white;
     font-weight: 600;
     font-size: 2rem;
 }

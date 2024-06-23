@@ -1,10 +1,17 @@
+:root {
+    --background: #CCC9A1;
+    --border: #280004;
+    --drum-background: #F0FFCE;
+    --pad: #4C230A;
+}
+
 *,
 *::before,
 *::after {
   padding: 0;
   margin: 0;
   box-sizing: inherit;
-  border: 0.5px solid black;
+  /* border: 0.5px solid black; */
 }
 
 html, body {
@@ -27,9 +34,20 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: var(--background);
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+@media (max-width: 50rem) {
+    #drum-machine {
+        display: block;
+    }
+
+    html {
+        font-size: 50%;
+    }
 }

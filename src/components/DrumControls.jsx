@@ -17,7 +17,7 @@ function DrumControls({ display, isPowerOn, handlePowerChange, volume, handleVol
                     onChange={handlePowerChange} />
             </div>
 
-            <div id='display'>{display}</div>
+            <div id='display'>{isPowerOn ? display : ""}</div>
 
             <div id='volume-wrap'>
                 <Stack spacing={2} direction="row" sx={{ mb: 1 }} alignItems="center">

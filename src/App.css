@@ -1,5 +1,7 @@
 #drum-machine-app {
-    min-width: 80rem;
+    padding: 1rem;
+    background-color: var(--drum-background);
+    border: 5px solid var(--border);
 }
 
 #drum-machine {
