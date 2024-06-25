@@ -4,6 +4,7 @@ import DrumPadsContainer from './components/DrumPadsContainer';
 import DrumControls from './components/DrumControls';
 import { useEffect, useState } from "react";
 
+// Drum pads initialization - each object represents a drum sound with its associated key, ID, and sound URL
 const drumPads = [
   {
     keyCode: 81,
@@ -53,50 +54,63 @@ const drumPads = [
   }
 ];
 
+// Main App component
 function App() {
+  // State hooks for power status, volume, and display text
   const [isPowerOn, setIsPowerOn] = useState(true);
   const [volume, setVolume] = useState(50);
   const [display, setDisplay] = useState("");
 
+  // Effect hook to add and clean up the keydown event listener for playing drum sounds
   useEffect(() => {
     function handleKeyDown(event) {
+      // Find the drum pad corresponding to the pressed key
       const sound = drumPads.find(sound => sound.keyTrigger.toLowerCase() === event.key);
       if (sound) {
+        // Play the sound if a matching drum pad is found
         const audio = new Audio(`${sound.url}`);
-        audio.volume = (volume / 100).toFixed(2);
+        audio.volume = (volume / 100).toFixed(2); // Adjust volume
         audio.play();
-        setDisplay(sound.id);
+        setDisplay(sound.id); // Update display with the sound ID
       }
     }
 
+    // Add event listener for keydown events
     window.addEventListener('keydown', handleKeyDown);
 
+    // Cleanup function to remove the event listener
     return () => {
       window.removeEventListener('keydown', handleKeyDown);
     };
   }, []);
 
+  // Handler for Power Switch toggle change
   function handlePowerChange(event) {
     setIsPowerOn(event.target.checked);
   }
 
+  // Handler for volume change
   function handleVolumeChange(event, newValue) {
     setVolume(newValue);
   }
 
+  // Handler for click events on drum pads
   function handleOnClick(id) {
-    setDisplay(id);
+    setDisplay(id); // Update display with the clicked drum pad's ID
   }
 
   return (
     <div id='drum-machine-app'>
+      {/* Header component */}
       <Header />
       <div id='drum-machine'>
+        {/* Drum pads container with props */}
         <DrumPadsContainer
           isPowerOn={isPowerOn}
           drumPads={drumPads}
           volume={volume}
           handleOnClick={handleOnClick} />
+        {/* Drum controls with props */}
         <DrumControls
           display={display}
           isPowerOn={isPowerOn}

@@ -1,12 +1,14 @@
+/* Container for all drum control elements */
 #drum-controls {
     width: 40rem;
-    display: flex;
+    display: flex; /* Enables flexbox column layout, to center contents */
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
 }
 
+/* Style for the display showing current sound */
 #display {
     height: 6rem;
     width: 60%;
@@ -19,7 +21,8 @@
     color: white;
 }
 
+/* Container for volume control elements */
 #volume-wrap {
     width: 80%;
-    font-size: 3rem;
+    font-size: 3rem; /* Sets a large font size for the volume up and down icons */
 }

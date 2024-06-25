@@ -1,9 +1,11 @@
+/* Styles for the drum machine App component */
 #drum-machine-app {
-    padding: 1rem;
+    padding: 1rem; /* Adds padding around the entire app for spacing */
     background-color: var(--drum-background);
     border: 5px solid var(--border);
 }
 
+/* Styles for the drum machine area, exclude the Header component */
 #drum-machine {
-    display: flex;
+    display: flex; /* Uses flexbox layout to arrange child elements horizontally */
 }

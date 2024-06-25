@@ -1,3 +1,4 @@
+/* Defining root CSS variables for consistent theming across the application */
 :root {
     --background: #CCC9A1;
     --border: #280004;
@@ -5,49 +6,56 @@
     --pad: #4C230A;
 }
 
+/* Global styles
+Remove default padding and margin
+Inherit box-sizing from parent elements  */
 *,
 *::before,
 *::after {
   padding: 0;
   margin: 0;
   box-sizing: inherit;
-  /* border: 0.5px solid black; */
+  /* border: 0.5px solid black; */ /* Optional border for debugging */
 }
 
+/* Ensuring full height for html and body for full page UIs */
 html, body {
   height: 100%;
 }
 
 html {
-  min-width: 300px;
+  min-width: 300px; /* Minimum width to ensure usability on small devices */
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-size: 62.5%;
+    sans-serif; /* System default font stack for cross-platform compatibility */
+  -webkit-font-smoothing: antialiased; /* Improve the readability of text on webkit browsers */
+  -moz-osx-font-smoothing: grayscale; /* Improve the readability of text on Firefox for MacOS */
+  font-size: 62.5%; /* Setting base font size to 10px for easier rem calculations (62.5% of 16px default) */
 }
 
+/* Body element styles */
 body {
-  box-sizing: border-box;
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
   font-size: 1.6rem;
-  display: flex;
+  display: flex; /* Use flexbox for centering content */
   justify-content: center;
   align-items: center;
   background-color: var(--background);
 }
 
+/* Styles for <code> elements to use a monospace font for better readability */
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
 
+/* Responsive design adjustments */
 @media (max-width: 50rem) {
     #drum-machine {
-        display: block;
+        display: block; /* Stack drum machine components vertically on smaller screens */
     }
 
     html {
-        font-size: 50%;
+        font-size: 50%; /* Reduce base font size on smaller screens for better readability */
     }
 }

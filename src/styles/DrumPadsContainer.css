@@ -1,27 +1,31 @@
+/* Container for drum pads */
 #drum-pads-container {
-    /* width: 50%; */
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: grid; /* Uses CSS grid layout for arranging drum pads in 3x3 grid */
+    grid-template-columns: repeat(3, 1fr); /* 3x3 grid */
     margin: 2rem;
-    gap: 1rem;
+    gap: 1rem; /* Sets the gap between grid items */
 }
 
+/* Styles for individual drum pad */
 .drum-pad {
-    width: 10rem;
+    width: 10rem; /* Sets a fixed width and height, making them square */
     height: 10rem;
-    border-radius: 1rem;
-    box-shadow: 2px 2px 5px var(--pad);
+    border-radius: 1rem; 
+    box-shadow: 2px 2px 5px var(--pad); /* Adds a shadow for depth */
     border: none;
     background-color: var(--pad);
     color: white;
-    font-weight: 600;
+    font-weight: 600; /* Makes the font semi-bold */
     font-size: 2rem;
 }
 
+/* Hover state for drum pads: pointer cursor */
 .drum-pad:hover {
     cursor: pointer;
 }
 
+/* Active state for drum pads (when clicked):
+    Changes the background and shadow color */
 .drum-pad:active {
     background-color: aqua;
     box-shadow: 2px 2px 5px aqua;
