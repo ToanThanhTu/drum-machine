@@ -49,6 +49,11 @@ code {
     monospace;
 }
 
+footer {
+  margin-top: 2rem;
+  text-align: center;
+}
+
 /* Responsive design adjustments */
 @media (max-width: 50rem) {
     #drum-machine {

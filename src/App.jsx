@@ -2,6 +2,8 @@ import './App.css';
 import Header from './components/Header';
 import DrumPadsContainer from './components/DrumPadsContainer';
 import DrumControls from './components/DrumControls';
+import Footer from './components/Footer';
+
 import { useEffect, useState } from "react";
 
 // Drum pads initialization - each object represents a drum sound with its associated key, ID, and sound URL
@@ -100,25 +102,29 @@ function App() {
   }
 
   return (
-    <div id='drum-machine-app'>
-      {/* Header component */}
-      <Header />
-      <div id='drum-machine'>
-        {/* Drum pads container with props */}
-        <DrumPadsContainer
-          isPowerOn={isPowerOn}
-          drumPads={drumPads}
-          volume={volume}
-          handleOnClick={handleOnClick} />
-        {/* Drum controls with props */}
-        <DrumControls
-          display={display}
-          isPowerOn={isPowerOn}
-          handlePowerChange={handlePowerChange}
-          volume={volume}
-          handleVolumeChange={handleVolumeChange} />
+    <>
+      <div id='drum-machine-app'>
+        {/* Header component */}
+        <Header />
+        <div id='drum-machine'>
+          {/* Drum pads container with props */}
+          <DrumPadsContainer
+            isPowerOn={isPowerOn}
+            drumPads={drumPads}
+            volume={volume}
+            handleOnClick={handleOnClick} />
+          {/* Drum controls with props */}
+          <DrumControls
+            display={display}
+            isPowerOn={isPowerOn}
+            handlePowerChange={handlePowerChange}
+            volume={volume}
+            handleVolumeChange={handleVolumeChange} />
+        </div>
       </div>
-    </div>
+      <Footer />
+    </>
+
   )
 }
 
